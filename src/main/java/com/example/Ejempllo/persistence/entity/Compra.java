@@ -24,7 +24,7 @@ private String estado;
 @ManyToOne
 @JoinColumn(name ="id_cliente", insertable = false, updatable = false) //Se pone la PK del cliente y se pone los otro satributos para no crear nuevos clientes
 private Cliente cliente;
-@OneToMany(mappedBy = "producto")
+@OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL}) //Todos los procesos con compra incluyen sus productos
 private List<ComprasProducto> productos;
     public Integer getIdCompra() {
         return idCompra;

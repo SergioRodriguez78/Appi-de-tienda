@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 
-@Table(name="compras_producto")
+@Table(name="compras_productos")
 public class ComprasProducto {
 @EmbeddedId //Debido que la clave es compuesta, usamos esta notacion para identificar
     private ComprasProductoPK id;
@@ -13,6 +13,7 @@ private Integer cantidad;
 private Double total;
 private Boolean estado;
 @ManyToOne
+@MapsId("idCompra")
 @JoinColumn(name="id_compra",insertable = false,updatable = false)
 private Compra compra;
 @ManyToOne //En producto no se genera la relacion, debido a que la informacion de las compras no es de mucho valor
