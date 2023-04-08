@@ -26,6 +26,7 @@ public class CompraRepository implements PurchaseRepository {
         //Como no hay uno definido, hacemos query method en crud repository
         return compraCrudRepository.findByIdCliente(clientId)
                 .map(compras -> mapper.toPurchases(compras));
+
     }
 
     @Override
